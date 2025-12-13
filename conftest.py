@@ -1,9 +1,8 @@
-import string
-import random
-
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+
+import data
 
 
 @pytest.fixture(scope="function")
@@ -17,6 +16,8 @@ def driver():
 
 @pytest.fixture(scope="function")
 def url(driver):
-    driver.get("https://qa-desk.stand.praktikum-services.ru/")
+    driver.get(data.Urls.url)
     yield driver
+
+
 
